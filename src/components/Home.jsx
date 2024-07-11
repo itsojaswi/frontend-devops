@@ -72,10 +72,10 @@ const Home = () => {
         }}
       >
         Fitness should be 
-        <br />accessible to everyone!
+        <br />accessible to everyone
       </Typography>
       <Typography sx={{fontSize:20}}>
-        Keep track of your workouts!
+        Keep track of your workouts
       </Typography>
       <Button
       variant="outlined"
