@@ -62,7 +62,7 @@ const NavBar = () => {
             component="div"
             sx={{ flexGrow: 1, fontWeight: "bold", color: "#DCDCDC", fontSize: "30px", cursor: "pointer",}}
           >
-            FitnessApppppp
+            FitnessApp
           </Typography>
           {!isMobile && (
             <Box sx={{ display: "flex" }}>
