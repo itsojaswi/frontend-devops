@@ -7,7 +7,7 @@ on:
       - develop
 
 jobs:
-  build-and-push:
+  build-and-push-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,3 +35,20 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend_image:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/frontend_image:latest
+
+      - name: Install SSH Client
+        run: sudo apt-get install -y openssh-client
+
+      - name: SSH into EC2 and Deploy
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          port: ${{ secrets.EC2_PORT }}
+          script: |
+            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+            docker pull ${{ secrets.DOCKER_USERNAME }}/frontend_image:latest
+            docker stop frontend_container || true
+            docker rm frontend_container || true
+            docker run -d --name frontend_container -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/frontend_image:latest
