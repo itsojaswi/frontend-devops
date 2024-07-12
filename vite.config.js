@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "http://3.0.183.83:4000/ ",
-        changeOrigin: true,
+        credentials: true,
       },
     },
   },
