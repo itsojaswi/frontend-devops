@@ -41,7 +41,7 @@ const WorkoutList = () => {
     console.log('Updating workout with ID:', editingWorkout._id);
 
     try {
-      const name = await axios.patch(`http://localhost:4000/api/workouts/${editingWorkout._id}`, editingWorkout);
+      const name = await axios.patch(`http://3.0.183.83:4000/api/workouts/${editingWorkout._id}`, editingWorkout);
       console.log(name);
       
     }  catch (error) {
