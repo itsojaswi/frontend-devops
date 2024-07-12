@@ -25,7 +25,7 @@ const WorkoutList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://3.0.183.83/api/workouts/${id}`);
+      await axios.delete(`http://3.0.183.83/4000:api/workouts/${id}`);
       setWorkouts(workouts.filter(workout => workout._id !== id));
     } catch (error) {
       console.error('Error deleting workout:', error);
