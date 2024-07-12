@@ -13,7 +13,7 @@ const WorkoutList = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get('hhttp://3.0.183.83:4000/api/workouts');
+        const response = await axios.get('http://3.0.183.83:4000/api/workouts');
         setWorkouts(response.data);
       } catch (error) {
         console.error('Error fetching workouts:', error);
