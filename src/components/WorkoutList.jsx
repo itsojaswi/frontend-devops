@@ -13,7 +13,7 @@ const WorkoutList = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/workouts');
+        const response = await axios.get('hhttp://3.0.183.83:4000/api/workouts');
         setWorkouts(response.data);
       } catch (error) {
         console.error('Error fetching workouts:', error);
@@ -25,7 +25,7 @@ const WorkoutList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/workouts/${id}`);
+      await axios.delete(`http://3.0.183.83/api/workouts/${id}`);
       setWorkouts(workouts.filter(workout => workout._id !== id));
     } catch (error) {
       console.error('Error deleting workout:', error);
