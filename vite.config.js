@@ -9,7 +9,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: `http://${ip}:4000`,
+        target: `http://54.169.135.250:4000`,
         credentials: true,
       },
     },

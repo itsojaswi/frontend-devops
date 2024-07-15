@@ -23,7 +23,7 @@ const WorkoutForm = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`http://${ip}:4000/api/workouts`, formData);
+      const response = await axios.post(`http://54.169.135.250:4000/api/workouts`, formData);
       console.log(response.data);
       setFormData({
         title: '',
