@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import axios from 'axios';
 
+const ip = "3.0.55.208"
 const WorkoutForm = () => {
   const [formData, setFormData] = useState({
     title: '',
@@ -22,7 +23,7 @@ const WorkoutForm = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://172.31.16.224:4000/api/workouts', formData);
+      const response = await axios.post(`http://${ip}:4000/api/workouts`, formData);
       console.log(response.data);
       setFormData({
         title: '',

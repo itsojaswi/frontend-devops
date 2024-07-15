@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
+const ip = "3.0.55.208";
 export default defineConfig({
   plugins: [react()],
 
@@ -8,7 +9,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "http://172.31.16.224:4000",
+        target: `http://${ip}:4000`,
         credentials: true,
       },
     },

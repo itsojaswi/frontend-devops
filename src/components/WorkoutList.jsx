@@ -5,6 +5,8 @@ import { Typography, IconButton, Grid, Dialog, DialogTitle, DialogContent, TextF
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
+const ip = "3.0.55.208"
+
 const WorkoutList = () => {
   const [workouts, setWorkouts] = useState([]);
   const [editingWorkout, setEditingWorkout] = useState(null);
@@ -13,7 +15,7 @@ const WorkoutList = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get('http://172.31.16.224:4000/api/workouts');
+        const response = await axios.get(`http://${ip}:4000/api/workouts`);
         setWorkouts(response.data);
       } catch (error) {
         console.error('Error fetching workouts:', error);
@@ -25,7 +27,7 @@ const WorkoutList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://172.31.16.224:4000/api/workouts/${id}`);
+      await axios.delete(`http://${ip}:4000/api/workouts/${id}`);
       setWorkouts(workouts.filter(workout => workout._id !== id));
     } catch (error) {
       console.error('Error deleting workout:', error);
@@ -41,7 +43,7 @@ const WorkoutList = () => {
     console.log('Updating workout with ID:', editingWorkout._id);
 
     try {
-      const name = await axios.patch(`http://172.31.16.224:4000/api/workouts/${editingWorkout._id}`, editingWorkout);
+      const name = await axios.patch(`http://${ip}:4000/api/workouts/${editingWorkout._id}`, editingWorkout);
       console.log(name);
       
     }  catch (error) {
