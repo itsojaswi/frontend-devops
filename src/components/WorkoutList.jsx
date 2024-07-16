@@ -5,7 +5,6 @@ import { Typography, IconButton, Grid, Dialog, DialogTitle, DialogContent, TextF
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
-const ip = "3.0.55.208"
 
 const WorkoutList = () => {
   const [workouts, setWorkouts] = useState([]);
