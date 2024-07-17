@@ -61,7 +61,7 @@ jobs:
             docker stop frontend_container || true
             docker rm frontend_container || true
             echo "Running new frontend container..."
-            docker run -d --name frontend_container 3000:80 ${{ secrets.DOCKER_USERNAME }}/frontend_image:latest
+            docker run -d --name frontend_container --network=host ${{ secrets.DOCKER_USERNAME }}/frontend_image:latest
             echo "Deployment complete. Listing running containers..."
             docker ps -a
 
