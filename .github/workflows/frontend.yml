@@ -65,15 +65,15 @@ jobs:
             echo "Deployment complete. Listing running containers..."
             docker ps -a
 
-      - name: Verify Image on EC2
-        uses: appleboy/ssh-action@v0.1.5
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
-          port: ${{ secrets.EC2_PORT }}
-          script: |
-            echo "Listing Docker images on EC2..."
-            docker images
-            echo "Listing running Docker containers on EC2..."
-            docker ps -a
+      # - name: Verify Image on EC2
+      #   uses: appleboy/ssh-action@v0.1.5
+      #   with:
+      #     host: ${{ secrets.EC2_HOST }}
+      #     username: ${{ secrets.EC2_USER }}
+      #     key: ${{ secrets.EC2_KEY }}
+      #     port: ${{ secrets.EC2_PORT }}
+      #     script: |
+      #       echo "Listing Docker images on EC2..."
+      #       docker images
+      #       echo "Listing running Docker containers on EC2..."
+      #       docker ps -a
