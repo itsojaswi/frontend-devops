@@ -9,7 +9,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: `http://54.179.187.198:4000`,
+        target: `https://54.179.187.198:4000`,
         credentials: true,
       },
     },
