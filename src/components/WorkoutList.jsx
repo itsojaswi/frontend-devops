@@ -26,7 +26,7 @@ const WorkoutList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://ojaswi.learn.cloudlaya.com/api/workouts/${id}`);
+      await axios.delete(`https://api-ojaswi.learn.cloudlaya.com/api/workouts/${id}`);
       setWorkouts(workouts.filter(workout => workout._id !== id));
     } catch (error) {
       console.error('Error deleting workout:', error);
@@ -42,7 +42,7 @@ const WorkoutList = () => {
     console.log('Updating workout with ID:', editingWorkout._id);
 
     try {
-      const name = await axios.patch(`https://ojaswi.learn.cloudlaya.com/api/workouts/${editingWorkout._id}`, editingWorkout);
+      const name = await axios.patch(`https://api-ojaswi.learn.cloudlaya.com/api/workouts/${editingWorkout._id}`, editingWorkout);
       console.log(name);
       
     }  catch (error) {
