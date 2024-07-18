@@ -14,7 +14,7 @@ const WorkoutList = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await axios.get(`https://ojaswi.learn.cloudlaya.com/api/workouts`);
+        const response = await axios.get(`https://api-ojaswi.learn.cloudlaya.com/api/workouts`);
         setWorkouts(response.data);
       } catch (error) {
         console.error('Error fetching workouts:', error);
