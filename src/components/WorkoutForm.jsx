@@ -23,7 +23,7 @@ const WorkoutForm = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`http://ojaswi.learn.cloudlaya.com:4000/api/workouts`, formData);
+      const response = await axios.post(`https://ojaswi.learn.cloudlaya.com/api/workouts`, formData);
       console.log(response.data);
       setFormData({
         title: '',

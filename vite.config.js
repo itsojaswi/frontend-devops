@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: `http://ojaswi.learn.cloudlaya.com:4000`,
+        target: `https://ojaswi.learn.cloudlaya.com`,
         credentials: true,
       },
     },
